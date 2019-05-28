@@ -1,4 +1,4 @@
-# Naive Bayes
+# Flower classification using NAIVE BAYES
 
 # Importing the libraries
 import numpy as np
@@ -42,3 +42,13 @@ y_pred = classifier.predict(X_test)
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
+#calculation
+count_true,count_false= 0, 0
+for i in range(0,38):
+    if(y_test[i] == y_pred[i]):
+        count_true=count_true+1
+    else:
+        count_false=count_false+1
+
+accuracy=(count_true)/(count_true+count_false)
+print("Accuracy: ", accuracy)
